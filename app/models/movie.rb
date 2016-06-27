@@ -1,4 +1,5 @@
 class Movie < ActiveRecord::Base
+	searchkick
 	has_many :reviews, dependent: :destroy
 
 	has_attached_file :image, styles: { medium: "400x600#" }
