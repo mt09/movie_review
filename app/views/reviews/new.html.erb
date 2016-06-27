@@ -3,6 +3,7 @@
 		<h2>Add new review</h2>
 		<%= simple_form_for [@review.movie, @review] do |f| %>
 			<div>
+				<%= javascript_include_tag 'ratyrate.js', "data-turbolinks-track" => false %>
 				<div id="star-rating"></div>
 				<%= f.input :comment %>
 			</div>
