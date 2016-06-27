@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
 	def create
 		@movie = Movie.find(params[:movie_id])
 		@review = @movie.reviews.build(review_params)
+		@review.user_id = current_user.id
 
 		if @review.save
 			redirect_to movie_path(@movie, @review), warning: "New review has been posted successfully."
