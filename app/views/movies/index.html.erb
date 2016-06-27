@@ -1,10 +1,12 @@
-<div class="jumbotron">
-	<h1>Your Favorite Movies Reviewed</h1>
-	<p>Current movie reviews and ratings from critics on all of the latest movies.</p>
-	<p>
-		<%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-	</p>
-</div>
+<% if !user_signed_in? %>
+	<div class="jumbotron">
+		<h1>Your Favorite Movies Reviewed</h1>
+		<p>Current movie reviews and ratings from critics on all of the latest movies.</p>
+		<p>
+			<%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+		</p>
+	</div>
+<% end %>
 
 <div class="row">
 	<% @movies.each do |movie| %>

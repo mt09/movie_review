@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
 		@review = @movie.reviews.build(review_params)
 
 		if @review.save
-			redirect_to movie_path(@movie, @review), info: "Successfully posted new review."
+			redirect_to movie_path(@movie, @review), warning: "New review has been posted successfully."
 		else
 			render :new
 		end

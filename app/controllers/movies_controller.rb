@@ -32,7 +32,7 @@ class MoviesController < ApplicationController
 		@movie = Movie.new(movie_params)
 
 		if @movie.save
-			redirect_to movies_path, info: "nice movie"
+			redirect_to movies_path, info: "Successfully posted a new movie."
 		else
 			render :new
 		end
