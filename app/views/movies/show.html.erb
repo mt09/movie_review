@@ -43,7 +43,6 @@
 				<% else %>
 					<% @reviews.each do |review| %>
 						<div class="star-rating" data-score= <%= review.rating %> ></div>
-						<%= javascript_include_tag 'ratyrate.js', "data-turbolinks-track" => false %>
 						<br>
 						<p><%= review.comment %></p>
 						<hr>
