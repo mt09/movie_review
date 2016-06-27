@@ -3,7 +3,7 @@
 		<h2>Add new review</h2>
 		<%= simple_form_for [@review.movie, @review] do |f| %>
 			<div>
-				<%= f.input :rating %>
+				<div id="star-rating"></div>
 				<%= f.input :comment %>
 			</div>
 			<div>
@@ -13,3 +13,10 @@
 		<% end %>
 	</div>
 </div>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: "review[rating]"
+  });
+</script>
