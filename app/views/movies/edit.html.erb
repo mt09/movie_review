@@ -18,6 +18,9 @@
 				<%= f.input :rating %>
 			</div>
 			<div>
+				<%= f.input :image, as: :file %>
+			</div>
+			<div>
 				<%= f.button :submit, data: {disable_with: "Submitting..."} %>
 				<%= link_to "Back", movies_path, class: "btn btn-default" %>
 			</div>
