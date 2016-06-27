@@ -1,47 +1,48 @@
 <div class="panel panel-default">
 	<div class="panel-body">
-		<div class="col-md-4">
-			<table class="table">
-				<tbody>
-					<tr>
-						<td><strong>Title: </strong></td>
-						<td><%= @movie.title %></td>
-					</tr>
-					<tr>
-						<td><strong>Description: </strong></td>
-						<td><%= @movie.description %></td>
-					</tr>
-					<tr>
-						<td><strong>Movie Length: </strong></td>
-						<td><%= @movie.length %></td>
-					</tr>
-					<tr>
-						<td><strong>Director: </strong></td>
-						<td><%= @movie.director %></td>
-					</tr>
-					<tr>
-						<td><strong>Rating: </strong></td>
-						<td><%= @movie.rating %></td>
-					</tr>
-				</tbody>
-			</table>
-			<%= link_to "Write a review", new_movie_review_path(@movie, @review) %>
-		</div>
-
-		<div class="col-md-7 col-md-offset-1">
-			<h2><%= @movie.title %></h2>
-			<p><%= @movie.description %></p>
-			<hr>
-			<% if @reviews.blank? %>
-				<%= link_to "Write Review", new_movie_review_path(@movie, @review) %>
-			<% else %>
-				<div>
+		<div class="row">
+			<div class="col-md-4">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td><strong>Title: </strong></td>
+							<td><%= @movie.title %></td>
+						</tr>
+						<tr>
+							<td><strong>Description: </strong></td>
+							<td><%= @movie.description %></td>
+						</tr>
+						<tr>
+							<td><strong>Movie Length: </strong></td>
+							<td><%= @movie.length %></td>
+						</tr>
+						<tr>
+							<td><strong>Director: </strong></td>
+							<td><%= @movie.director %></td>
+						</tr>
+						<tr>
+							<td><strong>Rating: </strong></td>
+							<td><%= @movie.rating %></td>
+						</tr>
+					</tbody>
+				</table>
+				<%= link_to "Write a review", new_movie_review_path(@movie, @review) %>
+			</div>
+			<div class="col-md-7 col-md-offset-1">
+				<h1><%= @movie.title %></h1>
+				<p><%= @movie.description %></p>
+				
+				<% if @reviews.blank? %>
+					<h3>No reviews just yet, would you like to add the first!</h3>
+	          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+				<% else %>
 					<% @reviews.each do |review| %>
 						<p><%= review.rating %></p>
 						<p><%= review.comment %></p>
+						<hr>
 					<% end %>
-				</div>
-			<% end %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
