@@ -1,0 +1,16 @@
+<div class="jumbotron">
+	<h1>Your Favorite Movies Reviewed</h1>
+	<p>Current movie reviews and ratings from critics on all of the latest movies.</p>
+</div>
+
+<div class="row">
+	<% @movies.each do |movie| %>
+		<div class="col-md-3 col-sm-6">
+			<div>
+				<%= link_to movie do %>
+					<%= movie.title %>
+				<% end %> 
+			</div>
+		</div>
+	<% end %>
+</div>

@@ -9,9 +9,11 @@
 <body>
 	<div class="row">
 		<div class="col-md-12">
-			<%= render "common/navbar" %>
-			<%= notice_message %>
-			<%= yield %>
+			<div class="container">
+				<%= render "common/navbar" %>
+				<%= notice_message %>
+				<%= yield %>
+			</div>
 		</div>
 	</div>
 </body>
